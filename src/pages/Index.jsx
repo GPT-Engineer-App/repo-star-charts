@@ -25,7 +25,9 @@ const Index = () => {
     return response.data;
   };
 
-  const { data, refetch, isLoading, isError } = useQuery(['stars'], fetchStars, {
+  const { data, refetch, isLoading, isError } = useQuery({
+    queryKey: ['stars'],
+    queryFn: fetchStars,
     enabled: false,
   });
 
